@@ -4,10 +4,20 @@
   <meta charset="UTF-8">
   <title>Angular todo</title>
 </head>
-<body ng-app="">
-  <h1>{{title}}</h1>  
-  <input type="text" ng-model="title">
+<body ng-app="TodoApp">
+  <div ng-controller="TodoController">
+    
+    <h1>Todo App</h1>
+    <!-- <h1>{{name}}</h1>  NOW WE KNOW CONTROLLER IS HOOKED UP -->
 
-  <script src="bower_components/angular/angular.js"]></script>
+    <ul>
+      <li ng-repeat="todo in todos">
+        <span class="title">{{ todo.title }}</span>
+      </li>
+    </ul>
+
+  </div>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/js/app.js"></script>
 </body>
 </html>
