@@ -1,0 +1,16 @@
+{
+  "name": "Angular-Todo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/treindle/Angular-Todo",
+  "authors": [
+    "Teresa Nededog <tnededog@my.hpu.edu>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
