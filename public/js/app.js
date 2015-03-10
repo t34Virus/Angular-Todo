@@ -3,15 +3,17 @@ angular
   .module('TodoApp', [])
 
   //dependency injection---v----------------------v
-  .controller('TodoController', ['$scope', function($scope){
+  .controller('TodoController', ['$scope', 'TodoService', function($scope, TodoService){
     
     // $scope.name = "IS HOOKED UP" NOW WE KNOW CONTROLLER IS HOOKED UP;
-    // $scope.todos = [
     //   {
     //     title: "Fake title",
     //     completed: true
-    //   }
-    $scope.todos = [];
+
+    //TodoService.list() returns a promise
+    TodoService.list().then(function (todos){
+      $scope.todos = todos.data;
+    }); 
 
     $scope.save_todo = function (new_title) {
       $scope.todos.push({
