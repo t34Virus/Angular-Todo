@@ -22,11 +22,23 @@ angular
       });
     
       $scope.new_todo = ""; //clear the input
+
+      //saves new todo
+      TodoService.create({title: new_title });
     };
     
     $scope.enter_saves = function($event){
       if( $event.keyCode == 13){ //keyCode for [enter key]
         $scope.save_todo( $scope.new_todo);
+      }
+    };
+
+    //on checkbox click.. ng-change was being a prick
+    $scope.check_changed = function($event, todo_id) {
+      if ($event.srcElement.checked) {
+        TodoService.complete(todo_id); 
+      } else {
+        TodoService.incomplete(todo_id);
       }
     };
 
